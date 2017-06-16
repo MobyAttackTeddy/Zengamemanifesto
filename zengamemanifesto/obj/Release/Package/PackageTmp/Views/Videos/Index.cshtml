@@ -1,0 +1,31 @@
+﻿@model IEnumerable<zengamemanifesto.Models.VideoSet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Videos</h2>
+
+
+<table class="table">
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="toptable" colspan="2">
+            <a href="/Videos/Details/@item.Id" style="color: #000000">@Html.DisplayFor(modelItem => item.Heading)</a>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            <a href="/Videos/Details/@item.Id" style="color: #000000"><img src="@item.ImgUrl" width="300" /></a>
+
+</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreText)        
+        </td>
+            <!-- -->
+    </tr>
+}
+
+</table>

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<zengamemanifesto.Models.StartPagePostsSet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="pageheader">Welcome to Zengamemanifesto.com the home for integral personal development, dating and global change.</h2>
+
+<table class="table" style="width: 70%">
+ 
+@foreach (var item in Model) {
+    <tr>
+        <td colspan="2" style="background-color: #69c274">
+            <b>@Html.DisplayFor(modelItem => item.Heading)</b>
+        </td>
+        </tr>
+    <tr>
+        <td width="110">
+            <img src="@Html.DisplayFor(modelItem => item.ImgLink)"  class="startpage-thumbnail"  />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TextHtml)
+        </td>
+    </tr>
+}
+
+</table>

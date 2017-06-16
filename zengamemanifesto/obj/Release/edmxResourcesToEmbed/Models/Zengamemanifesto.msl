@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="webbshopModelStoreContainer" CdmEntityContainer="Entities1">
+    <EntitySetMapping Name="AdminUser">
+      <EntityTypeMapping TypeName="webbshopModel.AdminUser">
+        <MappingFragment StoreEntitySet="AdminUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminUsers">
+      <EntityTypeMapping TypeName="webbshopModel.AdminUsers">
+        <MappingFragment StoreEntitySet="AdminUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Passwordsalt" ColumnName="Passwordsalt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AmountSet">
+      <EntityTypeMapping TypeName="webbshopModel.AmountSet">
+        <MappingFragment StoreEntitySet="AmountSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Grosiery_Id" ColumnName="Grosiery_Id" />
+          <ScalarProperty Name="RecipieSet_Id" ColumnName="RecipieSet_Id" />
+          <ScalarProperty Name="GrosierySet_Id" ColumnName="GrosierySet_Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookSet">
+      <EntityTypeMapping TypeName="webbshopModel.BookSet">
+        <MappingFragment StoreEntitySet="BookSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="BuyUrl" ColumnName="BuyUrl" />
+          <ScalarProperty Name="PreviewUrl" ColumnName="PreviewUrl" />
+          <ScalarProperty Name="AboutText" ColumnName="AboutText" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuyGrosierysSet">
+      <EntityTypeMapping TypeName="webbshopModel.BuyGrosierysSet">
+        <MappingFragment StoreEntitySet="BuyGrosierysSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CatName" ColumnName="CatName" />
+          <ScalarProperty Name="Gname" ColumnName="Gname" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="BuyList_Id" ColumnName="BuyList_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BuyListSet">
+      <EntityTypeMapping TypeName="webbshopModel.BuyListSet">
+        <MappingFragment StoreEntitySet="BuyListSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CalendarDaySet">
+      <EntityTypeMapping TypeName="webbshopModel.CalendarDaySet">
+        <MappingFragment StoreEntitySet="CalendarDaySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cart">
+      <EntityTypeMapping TypeName="webbshopModel.Cart">
+        <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="webbshopModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FoodCategorySet">
+      <EntityTypeMapping TypeName="webbshopModel.FoodCategorySet">
+        <MappingFragment StoreEntitySet="FoodCategorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gros_ListSet">
+      <EntityTypeMapping TypeName="webbshopModel.Gros_ListSet">
+        <MappingFragment StoreEntitySet="Gros_ListSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Grosiery_Id" ColumnName="Grosiery_Id" />
+          <ScalarProperty Name="List_Id" ColumnName="List_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grosiery_KSet">
+      <EntityTypeMapping TypeName="webbshopModel.Grosiery_KSet">
+        <MappingFragment StoreEntitySet="Grosiery_KSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrosierySet">
+      <EntityTypeMapping TypeName="webbshopModel.GrosierySet">
+        <MappingFragment StoreEntitySet="GrosierySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Desc" ColumnName="Desc" />
+          <ScalarProperty Name="Grosiery_K_Id" ColumnName="Grosiery_K_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Nutrition_Id" ColumnName="Nutrition_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListSet">
+      <EntityTypeMapping TypeName="webbshopModel.ListSet">
+        <MappingFragment StoreEntitySet="ListSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NutritionSet">
+      <EntityTypeMapping TypeName="webbshopModel.NutritionSet">
+        <MappingFragment StoreEntitySet="NutritionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fat" ColumnName="Fat" />
+          <ScalarProperty Name="Carbs" ColumnName="Carbs" />
+          <ScalarProperty Name="Protein" ColumnName="Protein" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="webbshopModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductDesc" ColumnName="ProductDesc" />
+          <ScalarProperty Name="ProductText" ColumnName="ProductText" />
+          <ScalarProperty Name="ProductFlag" ColumnName="ProductFlag" />
+          <ScalarProperty Name="CatId" ColumnName="CatId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeCartSet">
+      <EntityTypeMapping TypeName="webbshopModel.RecipeCartSet">
+        <MappingFragment StoreEntitySet="RecipeCartSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipieSet">
+      <EntityTypeMapping TypeName="webbshopModel.RecipieSet">
+        <MappingFragment StoreEntitySet="RecipieSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Desc" ColumnName="Desc" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="FoodCategory_Id" ColumnName="FoodCategory_Id" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="Youtube_url" ColumnName="Youtube_url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StartPagePostsSet">
+      <EntityTypeMapping TypeName="webbshopModel.StartPagePostsSet">
+        <MappingFragment StoreEntitySet="StartPagePostsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="TextHtml" ColumnName="TextHtml" />
+          <ScalarProperty Name="ImgLink" ColumnName="ImgLink" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="webbshopModel.UserSet">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Passwordsalt" ColumnName="Passwordsalt" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoSet">
+      <EntityTypeMapping TypeName="webbshopModel.VideoSet">
+        <MappingFragment StoreEntitySet="VideoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="PreText" ColumnName="PreText" />
+          <ScalarProperty Name="EmbededUrl" ColumnName="EmbededUrl" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CalendarDayRecipie" TypeName="webbshopModel.CalendarDayRecipie" StoreEntitySet="CalendarDayRecipie">
+      <EndProperty Name="CalendarDaySet">
+        <ScalarProperty Name="Id" ColumnName="CalendarDaySet_Id" />
+      </EndProperty>
+      <EndProperty Name="RecipieSet">
+        <ScalarProperty Name="Id" ColumnName="RecipieSet_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RecipeCartRecipie" TypeName="webbshopModel.RecipeCartRecipie" StoreEntitySet="RecipeCartRecipie">
+      <EndProperty Name="RecipeCartSet">
+        <ScalarProperty Name="Id" ColumnName="RecipeCartSet_Id" />
+      </EndProperty>
+      <EndProperty Name="RecipieSet">
+        <ScalarProperty Name="Id" ColumnName="RecipieSet_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

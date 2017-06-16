@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ZengameEntities-Web.config Connection String" description="ZengameEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.zengame.csdl|res://*/Models.zengame.ssdl|res://*/Models.zengame.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\Database1.mdf;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\musk0\\onedrive\\dokument\\visual\ studio\ 2017\\Projects\\Zengamemanifesto\\zengamemanifesto\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ZengameEntities']/@connectionString" />
+  </parameter>
+</parameters>

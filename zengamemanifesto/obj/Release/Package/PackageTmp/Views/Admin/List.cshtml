@@ -1,0 +1,45 @@
+﻿@model zengamemanifesto.Models.AdminModel
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin</h2>
+
+<h5>Startpage</h5>
+@Html.ActionLink("Create new start page post", "aCreate")
+<table>
+    @foreach (var aHome in Model.Home)
+
+    {
+        <tr>
+            <td>
+                @aHome.Heading
+            </td>
+            <td>
+                | @Html.ActionLink("Edit", "aEdit", new { id = aHome.Id })
+            </td>
+        </tr>
+
+    }
+</table>
+
+<h5>Videos</h5>
+@Html.ActionLink("Create new video post", "vCreate")
+<table>
+    @foreach (var aVideos in Model.Video)
+
+    {
+        <tr>
+            <td>
+                @aVideos.Heading
+            </td>
+            <td>
+                | @Html.ActionLink("Edit", "vEdit", new { id = aVideos.Id }) 
+            </td>
+        </tr>
+
+    }
+</table>
+

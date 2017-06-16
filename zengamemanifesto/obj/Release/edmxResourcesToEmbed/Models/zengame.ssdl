@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webbshopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminUser">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="password" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminUsers">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Passwordsalt" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AmountSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Grosiery_Id" Type="int" Nullable="false" />
+    <Property Name="RecipieSet_Id" Type="int" Nullable="false" />
+    <Property Name="GrosierySet_Id" Type="int" />
+    <Property Name="Amount" Type="int" />
+  </EntityType>
+  <EntityType Name="BookSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BookTitle" Type="nvarchar(max)" />
+    <Property Name="ImgUrl" Type="nvarchar(max)" />
+    <Property Name="BuyUrl" Type="nvarchar(max)" />
+    <Property Name="PreviewUrl" Type="nvarchar(max)" />
+    <Property Name="AboutText" Type="nvarchar(max)" />
+    <Property Name="Price" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="BuyGrosierysSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CatName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="BuyList_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BuyListSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CalendarDayRecipie">
+    <Key>
+      <PropertyRef Name="CalendarDaySet_Id" />
+      <PropertyRef Name="RecipieSet_Id" />
+    </Key>
+    <Property Name="CalendarDaySet_Id" Type="int" Nullable="false" />
+    <Property Name="RecipieSet_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CalendarDaySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="SessionId" Type="nchar" MaxLength="24" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Img" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="FoodCategorySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Img" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Gros_ListSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Grosiery_Id" Type="int" Nullable="false" />
+    <Property Name="List_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grosiery_KSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrosierySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Grosiery_K_Id" Type="int" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="Unit" Type="nchar" MaxLength="10" />
+    <Property Name="Nutrition_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="ListSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NutritionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Carbs" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Protein" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Calories" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="ProductDesc" Type="nchar" MaxLength="135" Nullable="false" />
+    <Property Name="ProductText" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="ProductFlag" Type="bit" Nullable="false" />
+    <Property Name="CatId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecipeCartRecipie">
+    <Key>
+      <PropertyRef Name="RecipeCartSet_Id" />
+      <PropertyRef Name="RecipieSet_Id" />
+    </Key>
+    <Property Name="RecipeCartSet_Id" Type="int" Nullable="false" />
+    <Property Name="RecipieSet_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecipeCartSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecipieSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FoodCategory_Id" Type="int" Nullable="false" />
+    <Property Name="Img" Type="varbinary(max)" />
+    <Property Name="Youtube_url" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="StartPagePostsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TextHtml" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImgLink" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" />
+    <Property Name="Passwordsalt" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="VideoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmbededUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImgUrl" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_BuyListBuyGrosierys">
+    <End Role="BuyListSet" Type="Self.BuyListSet" Multiplicity="1" />
+    <End Role="BuyGrosierysSet" Type="Self.BuyGrosierysSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BuyListSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BuyGrosierysSet">
+        <PropertyRef Name="BuyList_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CalendarDayRecipie_CalendarDaySet">
+    <End Role="CalendarDaySet" Type="Self.CalendarDaySet" Multiplicity="1" />
+    <End Role="CalendarDayRecipie" Type="Self.CalendarDayRecipie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CalendarDaySet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CalendarDayRecipie">
+        <PropertyRef Name="CalendarDaySet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CalendarDayRecipie_RecipieSet">
+    <End Role="RecipieSet" Type="Self.RecipieSet" Multiplicity="1" />
+    <End Role="CalendarDayRecipie" Type="Self.CalendarDayRecipie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecipieSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CalendarDayRecipie">
+        <PropertyRef Name="RecipieSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CalendarDayUser">
+    <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
+    <End Role="CalendarDaySet" Type="Self.CalendarDaySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CalendarDaySet">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FoodCategoryRecipie">
+    <End Role="FoodCategorySet" Type="Self.FoodCategorySet" Multiplicity="1" />
+    <End Role="RecipieSet" Type="Self.RecipieSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FoodCategorySet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecipieSet">
+        <PropertyRef Name="FoodCategory_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GrosieryGros_List">
+    <End Role="GrosierySet" Type="Self.GrosierySet" Multiplicity="1" />
+    <End Role="Gros_ListSet" Type="Self.Gros_ListSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrosierySet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Gros_ListSet">
+        <PropertyRef Name="Grosiery_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GrosierySetAmountSet">
+    <End Role="GrosierySet" Type="Self.GrosierySet" Multiplicity="0..1" />
+    <End Role="AmountSet" Type="Self.AmountSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrosierySet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AmountSet">
+        <PropertyRef Name="GrosierySet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListGros_List">
+    <End Role="ListSet" Type="Self.ListSet" Multiplicity="1" />
+    <End Role="Gros_ListSet" Type="Self.Gros_ListSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Gros_ListSet">
+        <PropertyRef Name="List_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecipeCartRecipie_RecipeCartSet">
+    <End Role="RecipeCartSet" Type="Self.RecipeCartSet" Multiplicity="1" />
+    <End Role="RecipeCartRecipie" Type="Self.RecipeCartRecipie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecipeCartSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecipeCartRecipie">
+        <PropertyRef Name="RecipeCartSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecipeCartRecipie_RecipieSet">
+    <End Role="RecipieSet" Type="Self.RecipieSet" Multiplicity="1" />
+    <End Role="RecipeCartRecipie" Type="Self.RecipeCartRecipie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecipieSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecipeCartRecipie">
+        <PropertyRef Name="RecipieSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecipieSetAmountSet">
+    <End Role="RecipieSet" Type="Self.RecipieSet" Multiplicity="1" />
+    <End Role="AmountSet" Type="Self.AmountSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecipieSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AmountSet">
+        <PropertyRef Name="RecipieSet_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserList">
+    <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
+    <End Role="ListSet" Type="Self.ListSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ListSet">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRecipeCart">
+    <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
+    <End Role="RecipeCartSet" Type="Self.RecipeCartSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecipeCartSet">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="webbshopModelStoreContainer">
+    <EntitySet Name="AdminUser" EntityType="Self.AdminUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AmountSet" EntityType="Self.AmountSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookSet" EntityType="Self.BookSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BuyGrosierysSet" EntityType="Self.BuyGrosierysSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BuyListSet" EntityType="Self.BuyListSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CalendarDayRecipie" EntityType="Self.CalendarDayRecipie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CalendarDaySet" EntityType="Self.CalendarDaySet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FoodCategorySet" EntityType="Self.FoodCategorySet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gros_ListSet" EntityType="Self.Gros_ListSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grosiery_KSet" EntityType="Self.Grosiery_KSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrosierySet" EntityType="Self.GrosierySet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListSet" EntityType="Self.ListSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NutritionSet" EntityType="Self.NutritionSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecipeCartRecipie" EntityType="Self.RecipeCartRecipie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecipeCartSet" EntityType="Self.RecipeCartSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RecipieSet" EntityType="Self.RecipieSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StartPagePostsSet" EntityType="Self.StartPagePostsSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserSet" EntityType="Self.UserSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VideoSet" EntityType="Self.VideoSet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BuyListBuyGrosierys" Association="Self.FK_BuyListBuyGrosierys">
+      <End Role="BuyListSet" EntitySet="BuyListSet" />
+      <End Role="BuyGrosierysSet" EntitySet="BuyGrosierysSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalendarDayRecipie_CalendarDaySet" Association="Self.FK_CalendarDayRecipie_CalendarDaySet">
+      <End Role="CalendarDaySet" EntitySet="CalendarDaySet" />
+      <End Role="CalendarDayRecipie" EntitySet="CalendarDayRecipie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalendarDayRecipie_RecipieSet" Association="Self.FK_CalendarDayRecipie_RecipieSet">
+      <End Role="RecipieSet" EntitySet="RecipieSet" />
+      <End Role="CalendarDayRecipie" EntitySet="CalendarDayRecipie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CalendarDayUser" Association="Self.FK_CalendarDayUser">
+      <End Role="UserSet" EntitySet="UserSet" />
+      <End Role="CalendarDaySet" EntitySet="CalendarDaySet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FoodCategoryRecipie" Association="Self.FK_FoodCategoryRecipie">
+      <End Role="FoodCategorySet" EntitySet="FoodCategorySet" />
+      <End Role="RecipieSet" EntitySet="RecipieSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GrosieryGros_List" Association="Self.FK_GrosieryGros_List">
+      <End Role="GrosierySet" EntitySet="GrosierySet" />
+      <End Role="Gros_ListSet" EntitySet="Gros_ListSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GrosierySetAmountSet" Association="Self.FK_GrosierySetAmountSet">
+      <End Role="GrosierySet" EntitySet="GrosierySet" />
+      <End Role="AmountSet" EntitySet="AmountSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListGros_List" Association="Self.FK_ListGros_List">
+      <End Role="ListSet" EntitySet="ListSet" />
+      <End Role="Gros_ListSet" EntitySet="Gros_ListSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecipeCartRecipie_RecipeCartSet" Association="Self.FK_RecipeCartRecipie_RecipeCartSet">
+      <End Role="RecipeCartSet" EntitySet="RecipeCartSet" />
+      <End Role="RecipeCartRecipie" EntitySet="RecipeCartRecipie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecipeCartRecipie_RecipieSet" Association="Self.FK_RecipeCartRecipie_RecipieSet">
+      <End Role="RecipieSet" EntitySet="RecipieSet" />
+      <End Role="RecipeCartRecipie" EntitySet="RecipeCartRecipie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecipieSetAmountSet" Association="Self.FK_RecipieSetAmountSet">
+      <End Role="RecipieSet" EntitySet="RecipieSet" />
+      <End Role="AmountSet" EntitySet="AmountSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserList" Association="Self.FK_UserList">
+      <End Role="UserSet" EntitySet="UserSet" />
+      <End Role="ListSet" EntitySet="ListSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRecipeCart" Association="Self.FK_UserRecipeCart">
+      <End Role="UserSet" EntitySet="UserSet" />
+      <End Role="RecipeCartSet" EntitySet="RecipeCartSet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
