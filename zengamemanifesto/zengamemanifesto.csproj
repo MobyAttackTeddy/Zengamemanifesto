@@ -181,11 +181,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\CreedController.cs" />
+    <Compile Include="Controllers\CurriculumController.cs" />
+    <Compile Include="Controllers\HallController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RecomendationController.cs" />
+    <Compile Include="Controllers\SheetController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\BookSet.cs">
       <DependentUpon>zengame.tt</DependentUpon>
     </Compile>
@@ -294,10 +302,18 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Videos\Index.cshtml" />
     <Content Include="Views\Videos\Details.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Admin\aCreate.cshtml" />
+    <Content Include="Views\Admin\aEdit.cshtml" />
+    <Content Include="Views\Admin\List.cshtml" />
+    <Content Include="Views\Admin\vCreate.cshtml" />
+    <Content Include="Views\Admin\vEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\About\" />
-    <Folder Include="Views\Books\" />
+    <Folder Include="Views\Book\" />
     <Folder Include="Views\Creed\" />
     <Folder Include="Views\Curriculum\" />
     <Folder Include="Views\Hall\" />

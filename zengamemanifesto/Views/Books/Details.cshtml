@@ -1,0 +1,67 @@
+﻿@model zengamemanifesto.Models.BookSet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookSet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImgUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuyUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreviewUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreviewUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AboutText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AboutText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

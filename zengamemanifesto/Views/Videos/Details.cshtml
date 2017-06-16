@@ -5,15 +5,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h2>@Html.DisplayFor(model => model.Heading)</h2>
 
 <div>
-    <h2>@Html.DisplayFor(model => model.Heading)</h2>
-</div>
-<div>
-    <iframe width="560" height="315" src="@Html.DisplayFor(model => model.EmbededUrl)" frameborder="0" allowfullscreen></iframe>
-    
-</div> 
 
-<div>
-    @Html.DisplayFor(model => model.Text)        
+    <dl class="dl-horizontal">
+
+        <dd>
+            <iframe width="560" height="315" src="@Html.DisplayTextFor(model => model.EmbededUrl)" frameborder="0" allowfullscreen></iframe>
+            
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+    </dl>
 </div>
+<p>
+    @Html.ActionLink("Back to Videos", "Index")
+</p>

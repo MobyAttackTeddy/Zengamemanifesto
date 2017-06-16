@@ -5,30 +5,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Videos</h2>
+
 
 <table class="table">
-@foreach (var item in Model)
-{
 
-        <tr>
-            <td colspan="2" class="postheader">
-                <a href="~/Videos/Details/@Html.DisplayFor(modelItem => item.Id)">
-                    <b>@Html.DisplayFor(modelItem => item.Heading)</b>
-                </a>
-            </td>
+@foreach (var item in Model) {
+    <tr>
+        <td class="toptable" colspan="2">
+            <a href="/Videos/Details/@item.Id" style="color: #000000">@Html.DisplayFor(modelItem => item.Heading)</a>
+        </td>
         </tr>
         <tr>
-            <td width="110">
-                <a href="~/Videos/Details/@Html.DisplayFor(modelItem => item.Id)">
-                    <img src="@Html.DisplayFor(modelItem => item.ImgUrl)" class="startpage-thumbnail" />
-                </a>
-            </td>
-            <td class="post-content-holder">
-                <a href="~/Videos/Details/@Html.DisplayFor(modelItem => item.Id)">
-                    @Html.DisplayFor(modelItem => item.PreText)
-                </a>
-            </td>
-        </tr>
+        <td>
+            <a href="/Videos/Details/@item.Id" style="color: #000000"><img src="@item.ImgUrl" width="300" /></a>
+
+</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreText)        
+        </td>
+            <!-- -->
+    </tr>
 }
+
 </table>
