@@ -28,6 +28,5 @@ namespace zengamemanifesto.Models
         public DbSet<BookSet> BookSet { get; set; }
         public DbSet<StartPagePostsSet> StartPagePostsSet { get; set; }
         public DbSet<VideoSet> VideoSet { get; set; }
-        public DbSet<UserSet> UserSetSet { get; set; }
     }
 }

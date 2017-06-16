@@ -10,9 +10,9 @@
 <table class="table">
 @foreach (var item in Model)
 {
-       
+
         <tr>
-            <td colspan="2" style="background-color: #69c274">
+            <td colspan="2" class="postheader">
                 <a href="~/Videos/Details/@Html.DisplayFor(modelItem => item.Id)">
                     <b>@Html.DisplayFor(modelItem => item.Heading)</b>
                 </a>
@@ -24,10 +24,11 @@
                     <img src="@Html.DisplayFor(modelItem => item.ImgUrl)" class="startpage-thumbnail" />
                 </a>
             </td>
-            <td>
+            <td class="post-content-holder">
                 <a href="~/Videos/Details/@Html.DisplayFor(modelItem => item.Id)">
                     @Html.DisplayFor(modelItem => item.PreText)
                 </a>
             </td>
         </tr>
+}
 </table>

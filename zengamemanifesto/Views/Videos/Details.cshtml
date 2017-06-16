@@ -5,55 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>VideoSet</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Heading)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Heading)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PreText)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PreText)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EmbededUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EmbededUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImgUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImgUrl)
-        </dd>
-
-    </dl>
+    <h2>@Html.DisplayFor(model => model.Heading)</h2>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div>
+    <iframe width="560" height="315" src="@Html.DisplayFor(model => model.EmbededUrl)" frameborder="0" allowfullscreen></iframe>
+    
+</div> 
+
+<div>
+    @Html.DisplayFor(model => model.Text)        
+</div>

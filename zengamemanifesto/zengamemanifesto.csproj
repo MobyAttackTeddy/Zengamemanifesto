@@ -192,9 +192,6 @@
     <Compile Include="Models\StartPagePostsSet.cs">
       <DependentUpon>zengame.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserSet.cs">
-      <DependentUpon>zengame.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\VideoSet.cs">
       <DependentUpon>zengame.tt</DependentUpon>
     </Compile>

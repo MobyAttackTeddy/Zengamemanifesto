@@ -21,7 +21,5 @@ namespace zengamemanifesto.Models
         public string PreviewUrl { get; set; }
         public string AboutText { get; set; }
         public string Price { get; set; }
-    
-        public virtual UserSet UserSet { get; set; }
     }
 }

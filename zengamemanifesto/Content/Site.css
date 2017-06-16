@@ -2,6 +2,20 @@
     text-align: center;
 }
 
+.postheader {
+    color: #000;
+    background-color: #69c274;
+}
+
+.postheader a{
+    color: #000;
+    background-color: #69c274;
+}
+
+.post-content-holder a {
+    color: #000;
+}
+
 .startpage-thumbnail {
     width: 100px;
 }

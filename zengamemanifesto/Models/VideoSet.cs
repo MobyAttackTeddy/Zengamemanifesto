@@ -20,7 +20,5 @@ namespace zengamemanifesto.Models
         public string EmbededUrl { get; set; }
         public string Text { get; set; }
         public string ImgUrl { get; set; }
-    
-        public virtual UserSet UserSet { get; set; }
     }
 }

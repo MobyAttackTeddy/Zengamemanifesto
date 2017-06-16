@@ -10,7 +10,7 @@ using zengamemanifesto.Models;
 
 namespace zengamemanifesto.Controllers
 {
-    public class VideoController : Controller
+    public class VideosController : Controller
     {
         private Entities1 db = new Entities1();
 

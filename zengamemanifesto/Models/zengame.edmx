@@ -144,7 +144,6 @@
           <Property Name="PreviewUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AboutText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="UserSet" Relationship="webbshopModel.UserSetBookSet" FromRole="BookSet" ToRole="UserSet" />
         </EntityType>
         <EntityType Name="StartPagePostsSet">
           <Key>
@@ -154,7 +153,6 @@
           <Property Name="Heading" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TextHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ImgLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="UserSet" Relationship="webbshopModel.UserSetStartPagePostsSet" FromRole="StartPagePostsSet" ToRole="UserSet" />
         </EntityType>
         <EntityType Name="VideoSet">
           <Key>
@@ -166,51 +164,13 @@
           <Property Name="EmbededUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ImgUrl" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="UserSet" Relationship="webbshopModel.UserSetVideoSet" FromRole="VideoSet" ToRole="UserSet" />
         </EntityType>
         <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BookSet" EntityType="Self.BookSet" />
           <EntitySet Name="StartPagePostsSet" EntityType="Self.StartPagePostsSet" />
           <EntitySet Name="VideoSet" EntityType="Self.VideoSet" />
-          <EntitySet Name="UserSetSet" EntityType="webbshopModel.UserSet" />
-          <AssociationSet Name="UserSetBookSet" Association="webbshopModel.UserSetBookSet">
-            <End Role="UserSet" EntitySet="UserSetSet" />
-            <End Role="BookSet" EntitySet="BookSet" />
-          </AssociationSet>
-          <AssociationSet Name="UserSetStartPagePostsSet" Association="webbshopModel.UserSetStartPagePostsSet">
-            <End Role="UserSet" EntitySet="UserSetSet" />
-            <End Role="StartPagePostsSet" EntitySet="StartPagePostsSet" />
-          </AssociationSet>
-          <AssociationSet Name="UserSetVideoSet" Association="webbshopModel.UserSetVideoSet">
-            <End Role="UserSet" EntitySet="UserSetSet" />
-            <End Role="VideoSet" EntitySet="VideoSet" />
-          </AssociationSet>
           </EntityContainer>
-        <EntityType Name="UserSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="BookSet" Relationship="webbshopModel.UserSetBookSet" FromRole="UserSet" ToRole="BookSet" />
-          <NavigationProperty Name="StartPagePostsSet" Relationship="webbshopModel.UserSetStartPagePostsSet" FromRole="UserSet" ToRole="StartPagePostsSet" />
-          <NavigationProperty Name="VideoSet" Relationship="webbshopModel.UserSetVideoSet" FromRole="UserSet" ToRole="VideoSet" />
-          <Property Name="Email" Type="String" Nullable="false" />
-          <Property Name="Password" Type="String" Nullable="false" />
-          <Property Name="PasswordHash" Type="String" Nullable="false" />
-        </EntityType>
-        <Association Name="UserSetBookSet">
-          <End Type="webbshopModel.UserSet" Role="UserSet" Multiplicity="1" />
-          <End Type="webbshopModel.BookSet" Role="BookSet" Multiplicity="*" />
-        </Association>
-        <Association Name="UserSetStartPagePostsSet">
-          <End Type="webbshopModel.UserSet" Role="UserSet" Multiplicity="1" />
-          <End Type="webbshopModel.StartPagePostsSet" Role="StartPagePostsSet" Multiplicity="*" />
-        </Association>
-        <Association Name="UserSetVideoSet">
-          <End Type="webbshopModel.UserSet" Role="UserSet" Multiplicity="1" />
-          <End Type="webbshopModel.VideoSet" Role="VideoSet" Multiplicity="*" />
-        </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>

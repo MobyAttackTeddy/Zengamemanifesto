@@ -18,7 +18,5 @@ namespace zengamemanifesto.Models
         public string Heading { get; set; }
         public string TextHtml { get; set; }
         public string ImgLink { get; set; }
-    
-        public virtual UserSet UserSet { get; set; }
     }
 }
