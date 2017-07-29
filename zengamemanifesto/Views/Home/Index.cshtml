@@ -7,22 +7,22 @@
 
 <h2 class="pageheader">Welcome to Zengamemanifesto.com the home for integral personal development, dating and global change.</h2>
 
-<table class="table" style="width: 70%">
+<div style="display: inline;" width: 70%">
  
 @foreach (var item in Model) {
-    <tr>
-        <td colspan="2" class="postheader">
+    <div>
+        <div class="postheader divspace" >
             <b>@Html.DisplayFor(modelItem => item.Heading)</b>
-        </td>
-        </tr>
-    <tr>
-        <td width="110">
+        </div>
+        </div>
+    <div>
+        <div width="110" class="divspace" >
             <img src="@Html.DisplayFor(modelItem => item.ImgLink)"  class="startpage-thumbnail"  />
-        </td>
-        <td>
+        </div>
+        <div class="divspace" >
             @Html.DisplayFor(modelItem => item.TextHtml)
-        </td>
-    </tr>
+        </div>
+    </div>
 }
 
-</table>
+</div>

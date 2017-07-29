@@ -522,11 +522,12 @@ h1,
 h2,
 .h2 {
   font-size: 30px;
+
 }
 
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 h4,
@@ -1436,7 +1437,7 @@ th {
 }
 
 .table thead > tr > th {
-  vertical-align: bottom;
+  
   border-bottom: 2px solid #dddddd;
 }
 
@@ -2018,8 +2019,7 @@ textarea.input-lg {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-       -o-user-select: none;
-          user-select: none;
+
 }
 
 .btn:focus {

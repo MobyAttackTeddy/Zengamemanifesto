@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using zengamemanifesto.Models;
-using zengamemanifesto.Models;
+
 
 namespace zengamemanifesto.Controllers
 {
@@ -60,7 +60,7 @@ namespace zengamemanifesto.Controllers
                 db.SaveChanges();
                 return RedirectToAction("List");
             }
-
+             
             return View(startPagePosts);
         }
 
@@ -76,7 +76,7 @@ namespace zengamemanifesto.Controllers
                 return RedirectToAction("List");
             }
 
-            am.Books = db.BookSet.ToList();
+            
             am.Home = db.StartPagePostsSet.ToList();
             am.Video = db.VideoSet.ToList();
             return View(am);
@@ -126,7 +126,7 @@ namespace zengamemanifesto.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult vCreate([Bind(Include = "Id,Heading,PreText,EmbededUrl,Text")] VideoSet video)
+        public ActionResult vCreate([Bind(Include = "Id,Heading,PreText,EmbededUrl,Text,ImgUrl")] VideoSet video)
         {
             if (ModelState.IsValid)
             {

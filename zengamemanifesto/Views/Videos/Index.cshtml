@@ -8,24 +8,22 @@
 <h2>Videos</h2>
 
 
-<table class="table">
 
-@foreach (var item in Model) {
-    <tr>
-        <td class="toptable" colspan="2">
-            <a href="/Videos/Details/@item.Id" style="color: #000000">@Html.DisplayFor(modelItem => item.Heading)</a>
-        </td>
-        </tr>
-        <tr>
-        <td>
+
+@foreach (var item in Model)
+{
+
+
+    <h3><a href="/Videos/Details/@item.Id" style="color: #000000">@Html.DisplayFor(modelItem => item.Heading)</a></h3>
+
+            <br />
             <a href="/Videos/Details/@item.Id" style="color: #000000"><img src="@item.ImgUrl" width="300" /></a>
+            <br />
+            <br />
+            <i>@Html.DisplayFor(modelItem => item.PreText)</i>
+            
 
-</td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PreText)        
-        </td>
-            <!-- -->
-    </tr>
+
+
 }
 
-</table>

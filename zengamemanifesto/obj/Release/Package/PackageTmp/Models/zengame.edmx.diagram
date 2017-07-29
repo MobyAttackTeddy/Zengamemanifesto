@@ -4,40 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2f81f20ec43b48b5a35f0ec9e92f5cbd" Name="Diagram1">
-        <EntityTypeShape EntityType="webbshopModel.AdminUser" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.AdminUsers" Width="1.5" PointX="10.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.AmountSet" Width="1.5" PointX="7.5" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.BookSet" Width="1.5" PointX="5.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.BuyGrosierysSet" Width="1.5" PointX="10" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.BuyListSet" Width="1.5" PointX="7.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.CalendarDaySet" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.Cart" Width="1.5" PointX="11.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.Category" Width="1.5" PointX="7.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.FoodCategorySet" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.Gros_ListSet" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.Grosiery_KSet" Width="1.5" PointX="9.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.GrosierySet" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.ListSet" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.NutritionSet" Width="1.5" PointX="11.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.Product" Width="1.5" PointX="12.75" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.RecipeCartSet" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.RecipieSet" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.StartPagePostsSet" Width="1.5" PointX="12.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.UserSet" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="webbshopModel.VideoSet" Width="1.5" PointX="13.75" PointY="1.375" IsExpanded="true" />
-        <AssociationConnector Association="webbshopModel.FK_GrosierySetAmountSet" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.FK_RecipieSetAmountSet" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.FK_BuyListBuyGrosierys" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.FK_CalendarDayUser" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.FK_FoodCategoryRecipie" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.FK_GrosieryGros_List" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.FK_ListGros_List" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.FK_UserList" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.FK_UserRecipeCart" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.CalendarDayRecipie" ManuallyRouted="false" />
-        <AssociationConnector Association="webbshopModel.RecipeCartRecipie" ManuallyRouted="false" />
-      </Diagram>
+      <Diagram DiagramId="2f81f20ec43b48b5a35f0ec9e92f5cbd" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="webbshopModel.BookSet" Width="1.5" PointX="10.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="webbshopModel.StartPagePostsSet" Width="1.5" PointX="12.625" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="webbshopModel.VideoSet" Width="1.5" PointX="14.5" PointY="7.375" IsExpanded="true" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

@@ -17,7 +17,7 @@ namespace zengamemanifesto.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View(db.StartPagePostsSet.ToList());
+            return View(db.StartPagePostsSet.OrderByDescending(o => o.Id).ToList());
         }
 
         protected override void Dispose(bool disposing)

@@ -1,4 +1,40 @@
-﻿body {
+﻿.pageheader {
+    text-align: center;
+}
+
+.postheader {
+    color: #000;
+    background-color: #80af66;
+}
+
+.postheader a{
+    color: #000;
+    background-color: #69c274;
+}
+
+.post-content-holder a {
+    color: #000;
+}
+
+.startpage-thumbnail {
+    width: 100px;
+}
+
+h3 {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.divspace {
+    padding: 5px;
+}
+
+.buybox {
+    display: table !important;
+    transition-property: all !important;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -7,7 +43,6 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    background-image: url(~/Img/bg1.jpg); background-repeat: no-repeat; background-position: left bottom; background-attachment: fixed;width:100%; height:100%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

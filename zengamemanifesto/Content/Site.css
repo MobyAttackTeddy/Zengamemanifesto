@@ -4,7 +4,7 @@
 
 .postheader {
     color: #000;
-    background-color: #69c274;
+    background-color: #80af66;
 }
 
 .postheader a{
@@ -18,6 +18,20 @@
 
 .startpage-thumbnail {
     width: 100px;
+}
+
+h3 {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.divspace {
+    padding: 5px;
+}
+
+.buybox {
+    display: table !important;
+    transition-property: all !important;
 }
 
 body {

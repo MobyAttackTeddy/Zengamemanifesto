@@ -6,38 +6,42 @@
 }
 
 <br />
-<table class="table">
-    
 
-@foreach (var item in Model) {
-    <tr>
-        <td class="toptable" colspan="3">
-            @Html.DisplayFor(modelItem => item.BookTitle)
-        </td>
-        </tr>
-        <tr>
-        <td>
-            <img src="@Html.DisplayFor(modelItem => item.ImgUrl)" style="width: 100px" />
-        </td>
-        
-        <td>
-            @Html.DisplayFor(modelItem => item.AboutText)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        </tr>
-        <tr style="">
-            <td>
-               
+<style>
+
+</style>
+    
+<div style="display: inline;">
+    @foreach (var item in Model)
+    {
+        <div>
+            <div class="toptable">
+                <h3>@Html.DisplayFor(modelItem => item.BookTitle)</h3>
+            </div>
+        </div>
+        <div class="buybox" >
+            <div style="float: left;" class="divspace">
+                <img src="@Html.DisplayFor(modelItem => item.ImgUrl)" style="width: 100px" />
+            </div>
+
+            <div style="float: left; width: 60%;" class="divspace">
+                @Html.DisplayFor(modelItem => item.AboutText)
+            </div>
+            <div style="" class="divspace">
+                @Html.DisplayFor(modelItem => item.Price)
+            </div>
+        </div>
+        <div class="buybox" >
+            <div style="float: left;" class="divspace">
+
                 <a href="@Html.DisplayFor(modelItem => item.PreviewUrl)" class="myButton">Preview</a>
-            </td>
-            <td colspan="2">
-                
-                <a href="@Html.DisplayFor(modelItem => item.BuyUrl)" class="myButton">Buy</a>
-            </td>
-        </tr>
-    
-}
+            </div>
+            <div style="float: left;" class="divspace">
 
-</table>
+                <a href="@Html.DisplayFor(modelItem => item.BuyUrl)" class="myButton">Buy</a>
+            </div>
+        </div>
+
+    }
+</div>
+
