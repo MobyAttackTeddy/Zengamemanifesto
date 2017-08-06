@@ -71,3 +71,7 @@ C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\ze
 C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\log4net.xml
 C:\Users\musk0\OneDrive\Dokument\Visual Studio 2017\Projects\zengamemanifesto\zengamemanifesto\bin\EntityFramework.SqlServer.dll
 C:\Users\musk0\OneDrive\Dokument\Visual Studio 2017\Projects\zengamemanifesto\zengamemanifesto\bin\EntityFramework.SqlServer.xml
+C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\PagedList.dll
+C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\PagedList.Mvc.dll
+C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\PagedList.xml
+C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\PagedList.Mvc.xml

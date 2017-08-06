@@ -68,8 +68,14 @@
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SendGrid, Version=9.1.1.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sendgrid.9.1.1\lib\net452\SendGrid.dll</HintPath>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.5.1.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.9.5.2\lib\net452\SendGrid.dll</HintPath>
     </Reference>
     <Reference Include="SimpleInjector, Version=4.0.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.0.0\lib\net45\SimpleInjector.dll</HintPath>
@@ -192,7 +198,14 @@
     <Compile Include="Models\BookSet.cs">
       <DependentUpon>zengame.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity1.cs">
+      <DependentUpon>zengame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\StartPagePostsSet.cs">
+      <DependentUpon>zengame.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
       <DependentUpon>zengame.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VideoSet.cs">
@@ -215,6 +228,7 @@
     </Compile>
     <Compile Include="Password\MembershipRebootConfig.cs" />
     <Compile Include="Password\SimpleInjectorConfig.cs" />
+    <Compile Include="Repo\UserAuth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Database1.mdf" />
@@ -224,6 +238,7 @@
     <Content Include="Content\angel.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -243,6 +258,7 @@
       <DependentUpon>zengame.edmx</DependentUpon>
       <LastGenOutput>zengame.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\zengame.edmx.sql" />
     <Content Include="Models\zengame.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>zengame.edmx</DependentUpon>
@@ -253,14 +269,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Downloads\feedback process.pdf" />
-    <Content Include="Downloads\the bill of rights.pdf" />
-    <Content Include="Downloads\the constitution.pdf" />
-    <Content Include="Downloads\A method of mind.pdf" />
-    <Content Include="Downloads\AnintegralpoliticalsafetyanalysisofSweden.docx.pdf" />
-    <Content Include="Downloads\Sweden a failed democratic state and a deep state found.pdf" />
-    <Content Include="Downloads\ending riots.pdf" />
-    <Content Include="Downloads\Convaying a messege.pdf" />
     <EntityDeploy Include="Models\zengame.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>zengame.Designer.cs</LastGenOutput>
@@ -292,7 +300,6 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Downloads\Balance_economy_20xx.xlsx" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Videos\Index.cshtml" />
@@ -311,6 +318,8 @@
     <Content Include="Views\Creed\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\About.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

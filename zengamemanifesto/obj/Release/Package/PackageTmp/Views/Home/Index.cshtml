@@ -1,4 +1,6 @@
-﻿@model IEnumerable<zengamemanifesto.Models.StartPagePostsSet>
+﻿
+@model PagedList.IPagedList<zengamemanifesto.Models.StartPagePostsSet>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -15,14 +17,20 @@
             <b>@Html.DisplayFor(modelItem => item.Heading)</b>
         </div>
         </div>
-    <div>
-        <div width="110" class="divspace" >
+    <div style="display:inline-flex;">
+        <div  class="divspace" >
             <img src="@Html.DisplayFor(modelItem => item.ImgLink)"  class="startpage-thumbnail"  />
         </div>
-        <div class="divspace" >
+        <div class="divspace" style="font-size: medium">
             @Html.DisplayFor(modelItem => item.TextHtml)
         </div>
     </div>
 }
 
+</div>
+<div style="float: right;">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 </div>

@@ -36,5 +36,22 @@
     <EntitySet Name="BookSet" EntityType="Self.BookSet" />
     <EntitySet Name="StartPagePostsSet" EntityType="Self.StartPagePostsSet" />
     <EntitySet Name="VideoSet" EntityType="Self.VideoSet" />
+    <EntitySet Name="Entity1Set" EntityType="webbshopModel.Entity1" />
+    <EntitySet Name="UserSet" EntityType="webbshopModel.User" />
   </EntityContainer>
+  <EntityType Name="Entity1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Password" Type="String" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+  </EntityType>
 </Schema>

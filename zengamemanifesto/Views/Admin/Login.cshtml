@@ -1,0 +1,29 @@
+﻿@using zengamemanifesto.Models
+@model LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+<div class="panel">
+    <div class="panel-body">
+        <div class="form-group">
+            @using (Html.BeginForm())
+            {
+                <div class="alert">@Html.ValidationSummary()</div>
+                <div class="form-group">
+                    Login: @Html.TextBoxFor(c => c.Email)
+                </div>
+                <div class="form-group">
+                    Password: @Html.PasswordFor(c => c.Password)
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" />
+                </div>
+            }
+        </div>
+    </div>
+</div>

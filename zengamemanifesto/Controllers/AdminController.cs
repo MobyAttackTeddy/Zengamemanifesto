@@ -6,17 +6,43 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using zengamemanifesto.Models;
-
+using zengamemanifesto.Repo;
 
 namespace zengamemanifesto.Controllers
 {
-    public class AdminController : Controller
+    [Authorize]
+    public class AdminController : Controller 
     {
         private Entities1 db = new Entities1();
         private AdminModel am = new AdminModel();
+        private readonly UserAuth _auth = new UserAuth();
+
+        [AllowAnonymous]
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View(new LoginViewModel());
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Login(LoginViewModel login)
+        {
+            if (ModelState.IsValid)
+            {
+                if(_auth.CheckLogin(login.Email, login.Password))
+                {
+                    FormsAuthentication.SetAuthCookie(login.Email, false);
+                    return Redirect(Url.Action("List", "Admin"));
+                }
+            }
+            return View();
+        }
+
         // GET: Admin
-        [Authorize]
+
         public ActionResult List()
         {
             AdminModel am = new AdminModel();
@@ -26,7 +52,7 @@ namespace zengamemanifesto.Controllers
             return View(am);
         }
 
-        [Authorize]
+        
         public ActionResult aEdit(int? id)
         {
             if (id == null)
@@ -41,7 +67,7 @@ namespace zengamemanifesto.Controllers
             return View(startPagePosts);
         }
 
-        [Authorize]
+        
         public ActionResult aCreate()
         {
             return View();
@@ -66,7 +92,7 @@ namespace zengamemanifesto.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        
         public ActionResult aEdit([Bind(Include = "Id,Heading,TextHtml,ImgLink")] StartPagePostsSet startPagePosts)
         {
             if (true)
@@ -74,16 +100,10 @@ namespace zengamemanifesto.Controllers
                 db.Entry(startPagePosts).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("List");
-            }
-
-            
-            am.Home = db.StartPagePostsSet.ToList();
-            am.Video = db.VideoSet.ToList();
-            return View(am);
-            
+            }           
         }
 
-        [Authorize]
+        
         public ActionResult vEdit(int? id)
         {
             if (id == null)
@@ -98,7 +118,7 @@ namespace zengamemanifesto.Controllers
             return View(videoPost);
         }
 
-        [Authorize]
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult vEdit([Bind(Include = "Id,Heading,PreText,EmbededUrl,Text,ImgUrl")] VideoSet video)
@@ -115,7 +135,7 @@ namespace zengamemanifesto.Controllers
             return View(am);
         }
 
-        [Authorize]
+        
         public ActionResult vCreate()
         {
             return View();

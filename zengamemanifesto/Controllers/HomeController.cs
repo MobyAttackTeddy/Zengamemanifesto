@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -15,9 +16,14 @@ namespace zengamemanifesto.Controllers
         private Entities1 db = new Entities1();
 
         // GET: Home
-        public ActionResult Index()
+
+        public ViewResult Index(int? page = 1)
         {
-            return View(db.StartPagePostsSet.OrderByDescending(o => o.Id).ToList());
+            var startPagePost = db.StartPagePostsSet.OrderByDescending(o => o.Id).ToList();
+            
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+            return View(startPagePost.ToPagedList(pageNumber, pageSize));
         }
 
         protected override void Dispose(bool disposing)

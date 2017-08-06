@@ -5,6 +5,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<meta property="og:type" content="article" />
+<meta property="og:title" content="@Html.Raw(Model.Heading)" />
+<meta property="og:description" content="@Html.Raw(Model.PreText)" />
+<meta property="og:image" content="@Html.Raw(Model.ImgUrl)" />
+<meta property="fb:app_id" content="1945124012404305" />
+<meta name="description" content="@Html.Raw(Model.PreText)" />
+
+<script>
+
+</script>
+
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1945124012404305";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <h2>@Html.DisplayFor(model => model.Heading)</h2>
 
 <div>
@@ -18,9 +40,35 @@
         <dd>
             @Html.DisplayFor(model => model.Text)
         </dd>
+        <dd>
+            <div class="fb-comments" data-href="http://zengamemanifesto.com/Videos/Details/@Html.Raw(Model.Id)" data-width="500" data-numposts="5"></div>
+
+        </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Back to Videos", "Index")
+    <a id="back" onclick="goBack">Back to videos</a>
+    <div width="500">
+        <div id="shareBtn" style="float:right; padding-right: 10px;"><img src="http://lenscottjoinery.co.uk/images/social-media/facebook-share-large.png" width="50" /></div>
+    </div>
+
+<script>
+    document.getElementById('shareBtn').onclick = function () {
+        FB.ui({
+            method: 'share',
+            display: 'popup',
+            href: 'http://zengamemanifesto.com/Videos/Details/@Html.Raw(Model.Id)',
+        }, function (response) { });
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+
+    document.getElementById("back").onclick = goBack;
+</script>
+    
+
 </p>
+

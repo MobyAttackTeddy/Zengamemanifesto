@@ -1,5 +1,6 @@
-﻿@model IEnumerable<zengamemanifesto.Models.VideoSet>
-
+﻿
+@model PagedList.IPagedList<zengamemanifesto.Models.VideoSet>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,7 +24,12 @@
             <i>@Html.DisplayFor(modelItem => item.PreText)</i>
             
 
-
-
 }
+<br />
+<br />
+<div style="float: right;">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>

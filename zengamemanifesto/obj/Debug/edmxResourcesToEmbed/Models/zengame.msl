@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="webbshopModelStoreContainer" CdmEntityContainer="Entities1">
     <EntitySetMapping Name="BookSet">
-      <EntityTypeMapping TypeName="webbshopModel.BookSet">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.BookSet)">
         <MappingFragment StoreEntitySet="BookSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
@@ -15,7 +15,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="StartPagePostsSet">
-      <EntityTypeMapping TypeName="webbshopModel.StartPagePostsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.StartPagePostsSet)">
         <MappingFragment StoreEntitySet="StartPagePostsSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Heading" ColumnName="Heading" />
@@ -25,7 +25,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="VideoSet">
-      <EntityTypeMapping TypeName="webbshopModel.VideoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.VideoSet)">
         <MappingFragment StoreEntitySet="VideoSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Heading" ColumnName="Heading" />
@@ -33,6 +33,23 @@
           <ScalarProperty Name="EmbededUrl" ColumnName="EmbededUrl" />
           <ScalarProperty Name="Text" ColumnName="Text" />
           <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entity1Set">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.Entity1)">
+        <MappingFragment StoreEntitySet="Entity1Set">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.User)">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -4,132 +4,62 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="webbshopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="BookSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="BookTitle" Type="nvarchar(max)" />
-          <Property Name="ImgUrl" Type="nvarchar(max)" />
-          <Property Name="BuyUrl" Type="nvarchar(max)" />
-          <Property Name="PreviewUrl" Type="nvarchar(max)" />
-          <Property Name="AboutText" Type="nvarchar(max)" />
-          <Property Name="Price" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="BuyGrosierysSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CatName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Gname" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Unit" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="BuyList_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BuyListSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="UserId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Category">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Img" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="FoodCategorySet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Img" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="Grosiery_KSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <EntityType Name="NutritionSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Fat" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Carbs" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Protein" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Calories" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Product">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProductName" Type="nchar" MaxLength="100" Nullable="false" />
-          <Property Name="ProductDesc" Type="nchar" MaxLength="135" Nullable="false" />
-          <Property Name="ProductText" Type="nchar" MaxLength="500" Nullable="false" />
-          <Property Name="ProductFlag" Type="bit" Nullable="false" />
-          <Property Name="CatId" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="StartPagePostsSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Heading" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="TextHtml" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ImgLink" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="VideoSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Heading" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="PreText" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="EmbededUrl" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="ImgUrl" Type="nchar" MaxLength="100" />
-        </EntityType>
-        <Association Name="FK_BuyListBuyGrosierys">
-          <End Role="BuyListSet" Type="Self.BuyListSet" Multiplicity="1" />
-          <End Role="BuyGrosierysSet" Type="Self.BuyGrosierysSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="BuyListSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="BuyGrosierysSet">
-              <PropertyRef Name="BuyList_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="webbshopModelStoreContainer">
-          <EntitySet Name="BookSet" EntityType="Self.BookSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BuyGrosierysSet" EntityType="Self.BuyGrosierysSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="BuyListSet" EntityType="Self.BuyListSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="FoodCategorySet" EntityType="Self.FoodCategorySet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Grosiery_KSet" EntityType="Self.Grosiery_KSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NutritionSet" EntityType="Self.NutritionSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="StartPagePostsSet" EntityType="Self.StartPagePostsSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VideoSet" EntityType="Self.VideoSet" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_BuyListBuyGrosierys" Association="Self.FK_BuyListBuyGrosierys">
-            <End Role="BuyListSet" EntitySet="BuyListSet" />
-            <End Role="BuyGrosierysSet" EntitySet="BuyGrosierysSet" />
-          </AssociationSet>
-          </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="webbshopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="webbshopModelStoreContainer">
+    <EntitySet Name="BookSet" EntityType="webbshopModel.Store.BookSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StartPagePostsSet" EntityType="webbshopModel.Store.StartPagePostsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VideoSet" EntityType="webbshopModel.Store.VideoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Entity1Set" EntityType="webbshopModel.Store.Entity1Set" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet" EntityType="webbshopModel.Store.UserSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="BookSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="BookTitle" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ImgUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="BuyUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PreviewUrl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AboutText" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Price" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="StartPagePostsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TextHtml" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImgLink" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="VideoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmbededUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImgUrl" Type="nchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Entity1Set">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="webbshopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -169,51 +99,84 @@
           <EntitySet Name="BookSet" EntityType="Self.BookSet" />
           <EntitySet Name="StartPagePostsSet" EntityType="Self.StartPagePostsSet" />
           <EntitySet Name="VideoSet" EntityType="Self.VideoSet" />
+          <EntitySet Name="Entity1Set" EntityType="webbshopModel.Entity1" />
+          <EntitySet Name="UserSet" EntityType="webbshopModel.User" />
           </EntityContainer>
+        <EntityType Name="Entity1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="webbshopModelStoreContainer" CdmEntityContainer="Entities1">
-          <EntitySetMapping Name="BookSet">
-            <EntityTypeMapping TypeName="webbshopModel.BookSet">
-              <MappingFragment StoreEntitySet="BookSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
-                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
-                <ScalarProperty Name="BuyUrl" ColumnName="BuyUrl" />
-                <ScalarProperty Name="PreviewUrl" ColumnName="PreviewUrl" />
-                <ScalarProperty Name="AboutText" ColumnName="AboutText" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="StartPagePostsSet">
-            <EntityTypeMapping TypeName="webbshopModel.StartPagePostsSet">
-              <MappingFragment StoreEntitySet="StartPagePostsSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Heading" ColumnName="Heading" />
-                <ScalarProperty Name="TextHtml" ColumnName="TextHtml" />
-                <ScalarProperty Name="ImgLink" ColumnName="ImgLink" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VideoSet">
-            <EntityTypeMapping TypeName="webbshopModel.VideoSet">
-              <MappingFragment StoreEntitySet="VideoSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Heading" ColumnName="Heading" />
-                <ScalarProperty Name="PreText" ColumnName="PreText" />
-                <ScalarProperty Name="EmbededUrl" ColumnName="EmbededUrl" />
-                <ScalarProperty Name="Text" ColumnName="Text" />
-                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="webbshopModelStoreContainer" CdmEntityContainer="Entities1">
+    <EntitySetMapping Name="BookSet">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.BookSet)">
+        <MappingFragment StoreEntitySet="BookSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="BuyUrl" ColumnName="BuyUrl" />
+          <ScalarProperty Name="PreviewUrl" ColumnName="PreviewUrl" />
+          <ScalarProperty Name="AboutText" ColumnName="AboutText" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StartPagePostsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.StartPagePostsSet)">
+        <MappingFragment StoreEntitySet="StartPagePostsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="TextHtml" ColumnName="TextHtml" />
+          <ScalarProperty Name="ImgLink" ColumnName="ImgLink" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.VideoSet)">
+        <MappingFragment StoreEntitySet="VideoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="PreText" ColumnName="PreText" />
+          <ScalarProperty Name="EmbededUrl" ColumnName="EmbededUrl" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entity1Set">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.Entity1)">
+        <MappingFragment StoreEntitySet="Entity1Set">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(webbshopModel.User)">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -227,7 +190,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

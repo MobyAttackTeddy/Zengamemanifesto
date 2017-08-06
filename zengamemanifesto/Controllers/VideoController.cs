@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using zengamemanifesto.Models;
+using PagedList;
 
 namespace zengamemanifesto.Controllers
 {
@@ -15,9 +16,16 @@ namespace zengamemanifesto.Controllers
         private Entities1 db = new Entities1();
 
         // GET: VideoSets
-        public ActionResult Index()
+
+
+        public ViewResult Index( int? page = 1)
         {
-            return View(db.VideoSet.ToList());
+           var videoPost = from s in db.VideoSet
+                          select s;
+            videoPost = videoPost.OrderBy(d => d.Id);
+           int pageSize = 5;
+           int pageNumber = (page ?? 1);
+           return View(videoPost.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: VideoSets/Details/5
