@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<zengamemanifesto.Models.VideoSet>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search Result</h2>
+@using (Html.BeginForm("Search", "Videos"))
+{
+    <form asp-controller="Movies" asp-action="Index">
+        <p>
+            <input type="text" name="searchStr">
+            <input id="Submit" type="submit" value="Search" class="btn" />
+        </p>
+    </form>
+}
+
+<dl>
+    @foreach (var item in Model)
+    {
+        <dd>
+            <hr />
+            <h3><a href="/Videos/Details/@item.Id" style="color: #000000">@Html.DisplayFor(modelItem => item.Heading)</a></h3>
+
+            <br />
+            <a href="/Videos/Details/@item.Id" style="color: #000000"><img src="@item.ImgUrl" width="300" /></a>
+            <br />
+            <br />
+            <i>@Html.DisplayFor(modelItem => item.PreText)</i>
+
+        </dd>
+    }
+</dl>
+

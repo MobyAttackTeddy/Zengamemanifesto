@@ -7,29 +7,38 @@
 }
 
 <h2>Videos</h2>
-
-
-
-
-@foreach (var item in Model)
+@using (Html.BeginForm("Search", "Videos"))
 {
+    <form asp-controller="Movies" asp-action="Index">
+        <p>
+                   <input type="text" name="searchStr" class="search">
+                   <input id="Submit" type="submit" value="Search" class="button" />
+        </p>
+    </form>
+}
 
-
-    <h3><a href="/Videos/Details/@item.Id" style="color: #000000">@Html.DisplayFor(modelItem => item.Heading)</a></h3>
+<dl>
+    @foreach (var item in Model)
+    {
+        <dd>
+            <hr />
+            <h3><a href="/Videos/Details/@item.Id" style="color: #000000">@Html.DisplayFor(modelItem => item.Heading)</a></h3>
 
             <br />
             <a href="/Videos/Details/@item.Id" style="color: #000000"><img src="@item.ImgUrl" width="300" /></a>
             <br />
             <br />
             <i>@Html.DisplayFor(modelItem => item.PreText)</i>
-            
 
-}
+        </dd>
+    }
+</dl>
+
 <br />
 <br />
 <div style="float: right;">
     Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
     @Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
 </div>

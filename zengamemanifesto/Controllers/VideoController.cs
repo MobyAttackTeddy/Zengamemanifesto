@@ -22,10 +22,19 @@ namespace zengamemanifesto.Controllers
         {
            var videoPost = from s in db.VideoSet
                           select s;
-            videoPost = videoPost.OrderBy(d => d.Id);
+           videoPost = videoPost.OrderBy(d => d.Id);
            int pageSize = 5;
            int pageNumber = (page ?? 1);
            return View(videoPost.ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult Search(string searchStr)
+        {
+            var serachResult = from s in db.VideoSet
+                               where s.Heading.Contains(searchStr)
+                               select s;
+
+            return View(serachResult);
         }
 
         // GET: VideoSets/Details/5

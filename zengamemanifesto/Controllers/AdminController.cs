@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -51,6 +52,8 @@ namespace zengamemanifesto.Controllers
             am.Video = db.VideoSet.ToList();
             return View(am);
         }
+        
+
 
         [ValidateInput(false)]
         public ActionResult aEdit(int? id)

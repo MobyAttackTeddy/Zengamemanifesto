@@ -75,3 +75,7 @@ C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\ze
 C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\PagedList.Mvc.dll
 C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\PagedList.xml
 C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\PagedList.Mvc.xml
+C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\System.Net.Http.Extensions.dll
+C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\System.Net.Http.Formatting.dll
+C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\bin\System.Net.Http.Primitives.dll
+C:\Users\musk0\onedrive\dokument\visual studio 2017\Projects\Zengamemanifesto\zengamemanifesto\obj\Release\zengamemanifesto.csproj.CoreCompileInputs.cache

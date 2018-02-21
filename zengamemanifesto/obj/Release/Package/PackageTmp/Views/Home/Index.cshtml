@@ -7,9 +7,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="pageheader">Welcome to Zengamemanifesto.com the home for integral personal development, dating and global change.</h2>
+<h2 class="pageheader">Welcome to Zengamemanifesto.com the home for integral personal development, leadership, dating and global change. </h2>
+<h4 class="pageheader"><i>Coaching on mindfulness, in leadership role's and mindset</i></h4>
 
-<div style="display: inline;" width: 70%">
+<div style="display: inline;" width: 95%">
  
 @foreach (var item in Model) {
     <div>
@@ -17,12 +18,12 @@
             <b>@Html.DisplayFor(modelItem => item.Heading)</b>
         </div>
         </div>
-    <div style="display:inline-flex;">
+    <div style="display:inline-flex; width: 100%;">
         <div  class="divspace" >
             <img src="@Html.DisplayFor(modelItem => item.ImgLink)"  class="startpage-thumbnail"  />
         </div>
-        <div class="divspace" style="font-size: medium">
-            @Html.DisplayFor(modelItem => item.TextHtml)
+        <div class="divspace" style="font-size: medium; width:inherit;">
+            @Html.Raw(item.TextHtml)
         </div>
     </div>
 }
