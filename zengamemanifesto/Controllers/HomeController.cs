@@ -21,7 +21,7 @@ namespace zengamemanifesto.Controllers
         {
             var startPagePost = db.StartPagePostsSet.OrderByDescending(o => o.Id).ToList();
             
-            int pageSize = 3;
+            int pageSize = 5;
             int pageNumber = (page ?? 1);
             return View(startPagePost.ToPagedList(pageNumber, pageSize));
         }

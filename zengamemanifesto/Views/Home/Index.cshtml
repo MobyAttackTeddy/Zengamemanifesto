@@ -17,12 +17,12 @@
             <b>@Html.DisplayFor(modelItem => item.Heading)</b>
         </div>
         </div>
-    <div style="display:inline-flex;">
+    <div style="display:inline-flex; width: 100%;">
         <div  class="divspace" >
             <img src="@Html.DisplayFor(modelItem => item.ImgLink)"  class="startpage-thumbnail"  />
         </div>
-        <div class="divspace" style="font-size: medium">
-            @Html.DisplayFor(modelItem => item.TextHtml)
+        <div class="divspace" style="font-size: medium; width:inherit;">
+            @Html.Raw(item.TextHtml)
         </div>
     </div>
 }
